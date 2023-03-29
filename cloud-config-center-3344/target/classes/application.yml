@@ -8,18 +8,18 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/yellowsy/springcloud.git #GitHub上面的git仓库名字
+          uri: https://github.com/yellowsy/springcloud-config.git #GitHub上面的git仓库名字
         ####搜索目录
           search-paths:
-            - springcloud/springcloud-config
+            - springcloud-config
       ####读取分支
       label: master
 #rabbitmq相关配置
-#rabbitmq:
-#    host: localhost
-#    port: 5672
-#    username: guest
-#    password: guest
+  rabbitmq:
+    host: 192.168.80.128
+    port: 5672
+    username: hsy
+    password: 1028
 
 #服务注册到eureka地址
 eureka:
@@ -28,10 +28,10 @@ eureka:
       defaultZone: http://localhost:7001/eureka
 
 ##rabbitmq相关配置,暴露bus刷新配置的端点
-#management:
-#  endpoints: #暴露bus刷新配置的端点
-#    web:
-#      exposure:
-#        include: 'bus-refresh'
+management:
+  endpoints: #暴露bus刷新配置的端点
+    web:
+      exposure:
+        include: 'bus-refresh'
 
 
